@@ -34,7 +34,7 @@ export default function PatientDashboard() {
               size="xs"
               variant="light"
               component="a"
-              href="/patient/assign-doctor"
+              href="/patient/doctor"
             >
               Change Doctor
             </Button>
@@ -52,7 +52,7 @@ export default function PatientDashboard() {
             variant="light"
             size="xs"
             component="a"
-            href="/patient/assign-doctor"
+            href="/patient/doctor"
             ml="sm"
           >
             Assign now
