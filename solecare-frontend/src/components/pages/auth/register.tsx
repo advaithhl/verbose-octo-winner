@@ -9,8 +9,10 @@ import {
   Button,
   Center,
   Stack,
+  Select,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { ROLES } from "../../../constants";
 
 export default function RegisterPage() {
   const form = useForm({
@@ -19,6 +21,7 @@ export default function RegisterPage() {
       email: "",
       password: "",
       confirmPassword: "",
+      role: "",
     },
 
     validate: {
@@ -28,6 +31,7 @@ export default function RegisterPage() {
         value.length >= 6 ? null : "Password must be at least 6 characters",
       confirmPassword: (value, values) =>
         value === values.password ? null : "Passwords do not match",
+      role: (value) => (ROLES.includes(value) ? null : "Invalid role"),
     },
   });
 
@@ -79,6 +83,13 @@ export default function RegisterPage() {
               label="Confirm password"
               placeholder="Re-enter password"
               {...form.getInputProps("confirmPassword")}
+              required
+            />
+
+            <Select
+              label="Are you a patient, doctor, or a shoemaker?"
+              placeholder="Pick value"
+              data={ROLES}
               required
             />
           </Stack>
