@@ -2,20 +2,20 @@ export type User = {
   name: string;
   email: string;
   password: string;
-  role: "PATIENT" | "DOCTOR" | "SHOEMAKER";
+  role: "Patient" | "Doctor" | "Shoemaker";
 };
 
 export type Patient = User & {
-  role: "PATIENT";
+  role: "Patient";
   doctor?: Doctor;
 };
 
 export type Doctor = User & {
-  role: "DOCTOR";
+  role: "Doctor";
   patients: Patient[];
 };
 
 export type Shoemaker = User & {
-  role: "SHOEMAKER";
+  role: "Shoemaker";
   patients: Patient[];
 };
