@@ -14,6 +14,10 @@
         {
           "type": "route",
           "uuid": "94ef098b-c705-4a67-8914-492defc3b575"
+        },
+        {
+          "type": "route",
+          "uuid": "9be84fe9-f87e-431d-8a0b-9c83f0255c5b"
         }
       ]
     }
@@ -50,6 +54,54 @@
           "body": "{}",
           "latency": 0,
           "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "9be84fe9-f87e-431d-8a0b-9c83f0255c5b",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "auth/login",
+      "responses": [
+        {
+          "uuid": "c75466aa-6fdf-40ee-b281-1762067ad28b",
+          "body": "{\n  \"id\": \"1\",\n  \"name\": \"Dr. Lara Meier\",\n  \"email\": \"lara.meier@example.com\",\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fakePayload.signature\",\n  \"role\": \"Doctor\"\n}\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "d21a59a9-2f93-4003-9a77-598ea06fde6b",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 401,
           "label": "",
           "headers": [],
           "bodyType": "INLINE",

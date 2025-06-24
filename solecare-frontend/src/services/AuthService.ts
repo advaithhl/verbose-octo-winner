@@ -4,7 +4,7 @@ import type { User } from "../types/users";
 import type { LoginInfo, RegisterInfo } from "../interfaces/auth";
 import { ROLES } from "../constants";
 
-export const LOGIN_URL = "/auth/v1/login";
+export const LOGIN_URL = "/auth/login";
 
 class AuthService {
   get user() {
