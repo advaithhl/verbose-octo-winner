@@ -2,6 +2,7 @@ import { httpService } from "./HTTPService";
 import { getUserInfoFromLocalStorage } from "../util/userInfo";
 import type { User } from "../types/users";
 import type { LoginInfo, RegisterInfo } from "../interfaces/auth";
+import { ROLES } from "../constants";
 
 export const LOGIN_URL = "/auth/v1/login";
 
@@ -11,15 +12,15 @@ class AuthService {
   }
 
   get isPatient() {
-    return this.user?.role === "Patient";
+    return this.user?.role === ROLES.PATIENT;
   }
 
   get isDoctor() {
-    return this.user?.role === "Doctor";
+    return this.user?.role === ROLES.DOCTOR;
   }
 
   get isShoemaker() {
-    return this.user?.role === "Shoemaker";
+    return this.user?.role === ROLES.SHOEMAKER;
   }
 
   isLoggedIn() {

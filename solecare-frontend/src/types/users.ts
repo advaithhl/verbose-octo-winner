@@ -1,23 +1,22 @@
+import { ROLES } from "../constants";
+
 export type User = {
   id: string;
   name: string;
   email: string;
   token: string;
-  role: "Patient" | "Doctor" | "Shoemaker";
+  role: ROLES;
 };
 
 export type Patient = User & {
-  role: "Patient";
   doctor?: Doctor;
   shoemaker?: Shoemaker;
 };
 
 export type Doctor = User & {
-  role: "Doctor";
   patients: Patient[];
 };
 
 export type Shoemaker = User & {
-  role: "Shoemaker";
   patients: Patient[];
 };

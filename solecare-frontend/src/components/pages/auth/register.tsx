@@ -21,7 +21,7 @@ export default function RegisterPage() {
       email: "",
       password: "",
       confirmPassword: "",
-      role: "",
+      role: ROLES.PATIENT || ROLES.DOCTOR || ROLES.SHOEMAKER,
     },
 
     validate: {
@@ -31,7 +31,7 @@ export default function RegisterPage() {
         value.length >= 6 ? null : "Password must be at least 6 characters",
       confirmPassword: (value, values) =>
         value === values.password ? null : "Passwords do not match",
-      role: (value) => (ROLES.includes(value) ? null : "Invalid role"),
+      role: (value) => (Object.values(ROLES).includes(value) ? null : "Invalid role"),
     },
   });
 
@@ -89,7 +89,7 @@ export default function RegisterPage() {
             <Select
               label="Are you a patient, doctor, or a shoemaker?"
               placeholder="Pick value"
-              data={ROLES}
+              data={Object.values(ROLES)}
               required
             />
           </Stack>

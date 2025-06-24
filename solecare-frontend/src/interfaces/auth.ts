@@ -1,3 +1,5 @@
+import type { ROLES } from "../constants";
+
 export interface LoginInfo {
   email: string;
   password: string;
@@ -8,5 +10,5 @@ export interface RegisterInfo {
   email: string;
   password: string;
   confirmPassword: string;
-  role: "Patient" | "Doctor" | "Shoemaker";
+  role: ROLES;
 }
