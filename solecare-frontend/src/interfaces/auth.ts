@@ -1,9 +1,9 @@
-interface LoginForm {
+export interface LoginInfo {
   email: string;
   password: string;
 }
 
-interface RegisterForm {
+export interface RegisterInfo {
   name: string;
   email: string;
   password: string;
