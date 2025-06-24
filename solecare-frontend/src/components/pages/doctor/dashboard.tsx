@@ -7,7 +7,6 @@ import {
   SimpleGrid,
 } from "@mantine/core";
 
-
 export default function DoctorDashboard() {
   return (
     <Container size="md" py="xl">
