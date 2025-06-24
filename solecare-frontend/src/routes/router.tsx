@@ -8,6 +8,7 @@ import AssignDoctorPage from "../components/pages/patient/doctor";
 import DoctorDashboard from "../components/pages/doctor/dashboard";
 import PatientListPage from "../components/pages/doctor/patients";
 import PatientDetailPage from "../components/pages/doctor/patient-detail";
+import AssignShoemakerPage from "../components/pages/patient/shoemaker";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
           {
             path: "doctor",
             element: <AssignDoctorPage />,
+          },
+          {
+            path: "shoemaker",
+            element: <AssignShoemakerPage />,
           },
         ],
       },

@@ -8,6 +8,7 @@ export type User = {
 export type Patient = User & {
   role: "Patient";
   doctor?: Doctor;
+  shoemaker?: Shoemaker;
 };
 
 export type Doctor = User & {
