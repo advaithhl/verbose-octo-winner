@@ -13,6 +13,10 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { ROLES } from "../../../constants";
+import { useMutation } from "@tanstack/react-query";
+import { authService } from "../../../services/AuthService";
+import { useNavigate } from "react-router";
+import type { RegisterInfo } from "../../../interfaces/auth";
 
 export default function RegisterPage() {
   const form = useForm({
@@ -31,13 +35,25 @@ export default function RegisterPage() {
         value.length >= 6 ? null : "Password must be at least 6 characters",
       confirmPassword: (value, values) =>
         value === values.password ? null : "Passwords do not match",
-      role: (value) => (Object.values(ROLES).includes(value) ? null : "Invalid role"),
+      role: (value) =>
+        Object.values(ROLES).includes(value) ? null : "Invalid role",
     },
   });
 
-  const handleSubmit = (values: typeof form.values) => {
-    console.log("Register data:", values);
-    // Add actual registration logic here
+  const navigate = useNavigate();
+
+  const registerMutation = useMutation({
+    mutationFn: authService.register.bind(authService),
+    onSuccess: () => {
+      navigate("/login");
+    },
+    onError: (error) => {
+      console.log("Registration error:", error);
+    },
+  });
+
+  const handleSubmit = (values: RegisterInfo) => {
+    registerMutation.mutate(values);
   };
 
   return (
