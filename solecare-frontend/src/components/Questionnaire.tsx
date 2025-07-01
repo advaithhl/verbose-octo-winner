@@ -230,7 +230,7 @@ const Questionnaire: React.FC = () => {
         updateFormData(`${part}_completion_time`, minutesTaken.toString());
       }
 
-      navigate("/thank-you");
+      navigate("/patient/mos/thank-you");
     }
   };
 
