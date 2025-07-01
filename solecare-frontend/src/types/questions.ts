@@ -1,4 +1,4 @@
-export interface QuestionOption {
+export type QuestionOption = {
   label: {
     de: string;
     en: string;
@@ -6,7 +6,7 @@ export interface QuestionOption {
   value: string;
 }
 
-export interface Question {
+export type Question = {
   id: string;
   section: {
     de: string;
