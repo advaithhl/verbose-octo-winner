@@ -20,7 +20,7 @@ export interface Question {
     de: string;
     en: string;
   };
-  type: 'radio' | 'checkbox' | 'text' | 'number' | 'scale';
+  type: "radio" | "checkbox" | "text" | "number" | "scale";
   required: boolean;
   options?: QuestionOption[];
   placeholder?: string;

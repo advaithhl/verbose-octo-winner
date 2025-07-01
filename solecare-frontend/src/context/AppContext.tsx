@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useState, type ReactNode, useEffect, useCallback } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  type ReactNode,
+  useEffect,
+  useCallback,
+} from "react";
 
 type FormData = {
   [key: string]: string | string[] | null;
@@ -13,7 +20,7 @@ interface AppContextType {
   highContrast: boolean;
   toggleHighContrast: () => void;
   resetForm: () => void;
-  language: 'de' | 'en';
+  language: "de" | "en";
   toggleLanguage: () => void;
 }
 
@@ -25,15 +32,17 @@ interface AppProviderProps {
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [formData, setFormData] = useState<FormData>({});
-  const [fontSize, setFontSize] = useState<string>('text-xl');
+  const [fontSize, setFontSize] = useState<string>("text-xl");
   const [highContrast, setHighContrast] = useState<boolean>(false);
-  const [language, setLanguage] = useState<'de' | 'en'>(() => {
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    return (savedLanguage === 'de' || savedLanguage === 'en') ? savedLanguage : 'de';
+  const [language, setLanguage] = useState<"de" | "en">(() => {
+    const savedLanguage = localStorage.getItem("preferredLanguage");
+    return savedLanguage === "de" || savedLanguage === "en"
+      ? savedLanguage
+      : "de";
   });
 
   useEffect(() => {
-    localStorage.setItem('preferredLanguage', language);
+    localStorage.setItem("preferredLanguage", language);
   }, [language]);
 
   const updateFormData = (key: string, value: string | string[] | null) => {
@@ -44,8 +53,8 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   }, []);
 
   // Updated font sizes array to start from text-xl instead of text-lg
-  const fontSizes = ['text-xl', 'text-2xl', 'text-3xl', 'text-4xl'];
-  
+  const fontSizes = ["text-xl", "text-2xl", "text-3xl", "text-4xl"];
+
   const increaseFontSize = () => {
     const currentIndex = fontSizes.indexOf(fontSize);
     if (currentIndex < fontSizes.length - 1) {
@@ -65,7 +74,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   };
 
   const toggleLanguage = () => {
-    setLanguage((prev) => prev === 'de' ? 'en' : 'de');
+    setLanguage((prev) => (prev === "de" ? "en" : "de"));
   };
 
   return (
@@ -91,7 +100,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 export const useAppContext = (): AppContextType => {
   const context = useContext(AppContext);
   if (context === undefined) {
-    throw new Error('useAppContext must be used within an AppProvider');
+    throw new Error("useAppContext must be used within an AppProvider");
   }
   return context;
 };

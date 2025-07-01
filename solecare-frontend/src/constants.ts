@@ -1,4 +1,4 @@
-export const APP_API_URL = "http://localhost:5000"
+export const APP_API_URL = "http://localhost:5000";
 
 export const ROLES = {
   PATIENT: "Patient",
@@ -6,4 +6,4 @@ export const ROLES = {
   SHOEMAKER: "Shoemaker",
 } as const;
 
-export type ROLES = typeof ROLES[keyof typeof ROLES];
+export type ROLES = (typeof ROLES)[keyof typeof ROLES];

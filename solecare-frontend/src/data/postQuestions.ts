@@ -1,936 +1,978 @@
-import type { Question } from '../types/questions';
+import type { Question } from "../types/questions";
 
 export const postQuestions: Question[] = [
   // A. Personal Information
   {
-    id: 'post_age',
+    id: "post_age",
     section: {
-      de: 'A. Persönliche Angaben',
-      en: 'A. Personal Information'
+      de: "A. Persönliche Angaben",
+      en: "A. Personal Information",
     },
     question: {
-      de: 'Wie alt sind Sie?',
-      en: 'How old are you?'
+      de: "Wie alt sind Sie?",
+      en: "How old are you?",
     },
-    type: 'number',
+    type: "number",
     required: true,
-    placeholder: 'Jahre / Years'
+    placeholder: "Jahre / Years",
   },
   {
-    id: 'post_gender',
+    id: "post_gender",
     section: {
-      de: 'A. Persönliche Angaben',
-      en: 'A. Personal Information'
+      de: "A. Persönliche Angaben",
+      en: "A. Personal Information",
     },
     question: {
-      de: 'Welches Geschlecht haben Sie?',
-      en: 'What is your gender?'
+      de: "Welches Geschlecht haben Sie?",
+      en: "What is your gender?",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: 'Weiblich',
-          en: 'Female'
+          de: "Weiblich",
+          en: "Female",
         },
-        value: 'female'
+        value: "female",
       },
       {
         label: {
-          de: 'Männlich',
-          en: 'Male'
+          de: "Männlich",
+          en: "Male",
         },
-        value: 'male'
+        value: "male",
       },
       {
         label: {
-          de: 'Divers',
-          en: 'Other'
+          de: "Divers",
+          en: "Other",
         },
-        value: 'other'
-      }
-    ]
+        value: "other",
+      },
+    ],
   },
   {
-    id: 'post_walking_distance',
+    id: "post_walking_distance",
     section: {
-      de: 'A. Persönliche Angaben',
-      en: 'A. Personal Information'
+      de: "A. Persönliche Angaben",
+      en: "A. Personal Information",
     },
     question: {
-      de: 'Wie weit können Sie aktuell gehen?',
-      en: 'How far can you currently walk?'
+      de: "Wie weit können Sie aktuell gehen?",
+      en: "How far can you currently walk?",
     },
     description: {
-      de: '(ICF: d450 Gehen)',
-      en: '(ICF: d450 Walking)'
+      de: "(ICF: d450 Gehen)",
+      en: "(ICF: d450 Walking)",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: 'Ich kann mich nur in meiner Wohnung bewegen (0–10 Meter)',
-          en: 'I can only move around in my apartment (0-10 meters)'
+          de: "Ich kann mich nur in meiner Wohnung bewegen (0–10 Meter)",
+          en: "I can only move around in my apartment (0-10 meters)",
         },
-        value: '0-10'
+        value: "0-10",
       },
       {
         label: {
-          de: 'Ich kann zum Nachbarn gehen (10–50 Meter)',
-          en: 'I can walk to my neighbors (10-50 meters)'
+          de: "Ich kann zum Nachbarn gehen (10–50 Meter)",
+          en: "I can walk to my neighbors (10-50 meters)",
         },
-        value: '10-50'
+        value: "10-50",
       },
       {
         label: {
-          de: 'Ich kann bis zur Straßenecke gehen (50–200 Meter)',
-          en: 'I can walk to the street corner (50-200 meters)'
+          de: "Ich kann bis zur Straßenecke gehen (50–200 Meter)",
+          en: "I can walk to the street corner (50-200 meters)",
         },
-        value: '50-200'
+        value: "50-200",
       },
       {
         label: {
-          de: 'Ich kann zu Geschäften in der Nachbarschaft gehen (200 Meter – 1 Kilometer)',
-          en: 'I can walk to stores in the neighborhood (200 meters - 1 kilometer)'
+          de: "Ich kann zu Geschäften in der Nachbarschaft gehen (200 Meter – 1 Kilometer)",
+          en: "I can walk to stores in the neighborhood (200 meters - 1 kilometer)",
         },
-        value: '200-1000'
+        value: "200-1000",
       },
       {
         label: {
-          de: 'Ich kann längere Strecken ohne Pause gehen (mehr als 1 Kilometer)',
-          en: 'I can walk longer distances without a break (more than 1 kilometer)'
+          de: "Ich kann längere Strecken ohne Pause gehen (mehr als 1 Kilometer)",
+          en: "I can walk longer distances without a break (more than 1 kilometer)",
         },
-        value: '1000+'
-      }
-    ]
+        value: "1000+",
+      },
+    ],
   },
   {
-    id: 'post_walking_improvement',
+    id: "post_walking_improvement",
     section: {
-      de: 'A. Persönliche Angaben',
-      en: 'A. Personal Information'
+      de: "A. Persönliche Angaben",
+      en: "A. Personal Information",
     },
     question: {
-      de: 'Im Vergleich zur Zeit vor Erhalt Ihrer orthopädischen Schuhe, hat sich Ihre Gehfähigkeit…',
-      en: 'Compared to before receiving your orthopedic shoes, has your walking ability...'
+      de: "Im Vergleich zur Zeit vor Erhalt Ihrer orthopädischen Schuhe, hat sich Ihre Gehfähigkeit…",
+      en: "Compared to before receiving your orthopedic shoes, has your walking ability...",
     },
     description: {
-      de: '(ICF: d450)',
-      en: '(ICF: d450)'
+      de: "(ICF: d450)",
+      en: "(ICF: d450)",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: '… durch die Schuhe verbessert',
-          en: '... improved because of the shoes'
+          de: "… durch die Schuhe verbessert",
+          en: "... improved because of the shoes",
         },
-        value: 'improved_by_shoes'
+        value: "improved_by_shoes",
       },
       {
         label: {
-          de: '… verbessert, aber nicht wegen der Schuhe',
-          en: '... improved, but not because of the shoes'
+          de: "… verbessert, aber nicht wegen der Schuhe",
+          en: "... improved, but not because of the shoes",
         },
-        value: 'improved_other'
+        value: "improved_other",
       },
       {
         label: {
-          de: '… nicht verändert',
-          en: '... not changed'
+          de: "… nicht verändert",
+          en: "... not changed",
         },
-        value: 'unchanged'
+        value: "unchanged",
       },
       {
         label: {
-          de: '… verschlechtert, aber nicht wegen der Schuhe',
-          en: '... worsened, but not because of the shoes'
+          de: "… verschlechtert, aber nicht wegen der Schuhe",
+          en: "... worsened, but not because of the shoes",
         },
-        value: 'worsened_other'
+        value: "worsened_other",
       },
       {
         label: {
-          de: '… durch die Schuhe verschlechtert',
-          en: '... worsened because of the shoes'
+          de: "… durch die Schuhe verschlechtert",
+          en: "... worsened because of the shoes",
         },
-        value: 'worsened_by_shoes'
-      }
-    ]
+        value: "worsened_by_shoes",
+      },
+    ],
   },
   {
-    id: 'post_walking_aids',
+    id: "post_walking_aids",
     section: {
-      de: 'A. Persönliche Angaben',
-      en: 'A. Personal Information'
+      de: "A. Persönliche Angaben",
+      en: "A. Personal Information",
     },
     question: {
-      de: 'Welche Gehhilfen verwenden Sie aktuell?',
-      en: 'Which walking aids do you currently use?'
+      de: "Welche Gehhilfen verwenden Sie aktuell?",
+      en: "Which walking aids do you currently use?",
     },
     description: {
-      de: '(Mehrfachantwort möglich)',
-      en: '(Multiple answers possible)'
+      de: "(Mehrfachantwort möglich)",
+      en: "(Multiple answers possible)",
     },
-    type: 'checkbox',
+    type: "checkbox",
     required: true,
     options: [
       {
         label: {
-          de: 'Keine',
-          en: 'None'
+          de: "Keine",
+          en: "None",
         },
-        value: 'none'
+        value: "none",
       },
       {
         label: {
-          de: 'Stock',
-          en: 'Walking stick'
+          de: "Stock",
+          en: "Walking stick",
         },
-        value: 'stick'
+        value: "stick",
       },
       {
         label: {
-          de: 'Krücken',
-          en: 'Crutches'
+          de: "Krücken",
+          en: "Crutches",
         },
-        value: 'crutches'
+        value: "crutches",
       },
       {
         label: {
-          de: 'Rollator',
-          en: 'Walker'
+          de: "Rollator",
+          en: "Walker",
         },
-        value: 'walker'
+        value: "walker",
       },
       {
         label: {
-          de: 'Rollstuhl',
-          en: 'Wheelchair'
+          de: "Rollstuhl",
+          en: "Wheelchair",
         },
-        value: 'wheelchair'
+        value: "wheelchair",
       },
       {
         label: {
-          de: 'Sonstiges',
-          en: 'Other'
+          de: "Sonstiges",
+          en: "Other",
         },
-        value: 'other'
-      }
-    ]
+        value: "other",
+      },
+    ],
   },
   {
-    id: 'post_conditions',
+    id: "post_conditions",
     section: {
-      de: 'A. Persönliche Angaben',
-      en: 'A. Personal Information'
+      de: "A. Persönliche Angaben",
+      en: "A. Personal Information",
     },
     question: {
-      de: 'Welche der folgenden Erkrankungen haben Sie?',
-      en: 'Which of the following conditions do you have?'
+      de: "Welche der folgenden Erkrankungen haben Sie?",
+      en: "Which of the following conditions do you have?",
     },
     description: {
-      de: '(Mehrfachantwort möglich)',
-      en: '(Multiple answers possible)'
+      de: "(Mehrfachantwort möglich)",
+      en: "(Multiple answers possible)",
     },
-    type: 'checkbox',
+    type: "checkbox",
     required: true,
     options: [
       {
         label: {
-          de: 'Diabetes',
-          en: 'Diabetes'
+          de: "Diabetes",
+          en: "Diabetes",
         },
-        value: 'diabetes'
+        value: "diabetes",
       },
       {
         label: {
-          de: 'Rheumatoide Arthritis',
-          en: 'Rheumatoid Arthritis'
+          de: "Rheumatoide Arthritis",
+          en: "Rheumatoid Arthritis",
         },
-        value: 'arthritis'
+        value: "arthritis",
       },
       {
         label: {
-          de: 'Fußfehlstellung (z. B. Plattfuß, Krallenzehen, Hallux valgus)',
-          en: 'Foot deformity (e.g., flat foot, claw toes, hallux valgus)'
+          de: "Fußfehlstellung (z. B. Plattfuß, Krallenzehen, Hallux valgus)",
+          en: "Foot deformity (e.g., flat foot, claw toes, hallux valgus)",
         },
-        value: 'foot_deformity'
+        value: "foot_deformity",
       },
       {
         label: {
-          de: 'Muskelerkrankung',
-          en: 'Muscle disease'
+          de: "Muskelerkrankung",
+          en: "Muscle disease",
         },
-        value: 'muscle_disease'
+        value: "muscle_disease",
       },
       {
         label: {
-          de: 'Neurologische Erkrankung',
-          en: 'Neurological disease'
+          de: "Neurologische Erkrankung",
+          en: "Neurological disease",
         },
-        value: 'neurological'
+        value: "neurological",
       },
       {
         label: {
-          de: 'Sonstiges',
-          en: 'Other'
+          de: "Sonstiges",
+          en: "Other",
         },
-        value: 'other'
-      }
-    ]
+        value: "other",
+      },
+    ],
   },
   {
-    id: 'post_other_condition',
+    id: "post_other_condition",
     section: {
-      de: 'A. Persönliche Angaben',
-      en: 'A. Personal Information'
+      de: "A. Persönliche Angaben",
+      en: "A. Personal Information",
     },
     question: {
-      de: 'Bitte geben Sie Ihre sonstige Erkrankung an:',
-      en: 'Please specify your other condition:'
+      de: "Bitte geben Sie Ihre sonstige Erkrankung an:",
+      en: "Please specify your other condition:",
     },
-    type: 'text',
+    type: "text",
     required: false,
     conditionalDisplay: {
-      questionId: 'post_conditions',
-      value: 'other'
-    }
+      questionId: "post_conditions",
+      value: "other",
+    },
   },
 
   // B. Current Situation
   {
-    id: 'post_wounds',
+    id: "post_wounds",
     section: {
-      de: 'B. Aktuelle Situation',
-      en: 'B. Current Situation'
+      de: "B. Aktuelle Situation",
+      en: "B. Current Situation",
     },
     question: {
-      de: 'Haben Sie Wunden oder Geschwüre an Füßen oder Knöcheln?',
-      en: 'Do you have wounds or ulcers on your feet or ankles?'
+      de: "Haben Sie Wunden oder Geschwüre an Füßen oder Knöcheln?",
+      en: "Do you have wounds or ulcers on your feet or ankles?",
     },
     description: {
-      de: '(ICF: b810 Schutzfunktion der Haut)',
-      en: '(ICF: b810 Protective functions of the skin)'
+      de: "(ICF: b810 Schutzfunktion der Haut)",
+      en: "(ICF: b810 Protective functions of the skin)",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: 'Ja',
-          en: 'Yes'
+          de: "Ja",
+          en: "Yes",
         },
-        value: 'yes'
+        value: "yes",
       },
       {
         label: {
-          de: 'Nein',
-          en: 'No'
+          de: "Nein",
+          en: "No",
         },
-        value: 'no'
-      }
+        value: "no",
+      },
     ],
     conditionalNext: {
-      'no': 10
-    }
+      no: 10,
+    },
   },
   {
-    id: 'post_wound_location',
+    id: "post_wound_location",
     section: {
-      de: 'B. Aktuelle Situation',
-      en: 'B. Current Situation'
+      de: "B. Aktuelle Situation",
+      en: "B. Current Situation",
     },
     question: {
-      de: 'Bitte beschreiben Sie, wo sich die Wunden/Geschwüre befinden:',
-      en: 'Please describe where the wounds/ulcers are located:'
+      de: "Bitte beschreiben Sie, wo sich die Wunden/Geschwüre befinden:",
+      en: "Please describe where the wounds/ulcers are located:",
     },
-    type: 'text',
+    type: "text",
     required: false,
     description: {
-      de: 'In einer vollständigen Anwendung würde hier eine interaktive Fußabbildung angezeigt.',
-      en: 'In a complete application, an interactive foot illustration would be shown here.'
-    }
+      de: "In einer vollständigen Anwendung würde hier eine interaktive Fußabbildung angezeigt.",
+      en: "In a complete application, an interactive foot illustration would be shown here.",
+    },
   },
   {
-    id: 'post_pain_level',
+    id: "post_pain_level",
     section: {
-      de: 'B. Aktuelle Situation',
-      en: 'B. Current Situation'
+      de: "B. Aktuelle Situation",
+      en: "B. Current Situation",
     },
     question: {
-      de: 'Wie stark sind Ihre Schmerzen beim Gehen?',
-      en: 'How severe is your pain when walking?'
+      de: "Wie stark sind Ihre Schmerzen beim Gehen?",
+      en: "How severe is your pain when walking?",
     },
     description: {
-      de: '(ICF: b280 Schmerz)',
-      en: '(ICF: b280 Pain)'
+      de: "(ICF: b280 Schmerz)",
+      en: "(ICF: b280 Pain)",
     },
-    type: 'scale',
+    type: "scale",
     required: true,
     scaleStart: {
-      de: 'Keine Schmerzen',
-      en: 'No pain'
+      de: "Keine Schmerzen",
+      en: "No pain",
     },
     scaleEnd: {
-      de: 'Sehr starke Schmerzen',
-      en: 'Very severe pain'
+      de: "Sehr starke Schmerzen",
+      en: "Very severe pain",
     },
     scaleLabels: {
-      de: ['Keine', 'Leicht', 'Mäßig', 'Stark', 'Sehr stark'],
-      en: ['None', 'Mild', 'Moderate', 'Severe', 'Very severe']
-    }
+      de: ["Keine", "Leicht", "Mäßig", "Stark", "Sehr stark"],
+      en: ["None", "Mild", "Moderate", "Severe", "Very severe"],
+    },
   },
   {
-    id: 'post_pain_improvement',
+    id: "post_pain_improvement",
     section: {
-      de: 'B. Aktuelle Situation',
-      en: 'B. Current Situation'
+      de: "B. Aktuelle Situation",
+      en: "B. Current Situation",
     },
     question: {
-      de: 'Im Vergleich zur Zeit vor Erhalt Ihrer orthopädischen Schuhe, haben sich Ihre Schmerzen…',
-      en: 'Compared to before receiving your orthopedic shoes, has your pain...'
+      de: "Im Vergleich zur Zeit vor Erhalt Ihrer orthopädischen Schuhe, haben sich Ihre Schmerzen…",
+      en: "Compared to before receiving your orthopedic shoes, has your pain...",
     },
     description: {
-      de: '(ICF: b280)',
-      en: '(ICF: b280)'
+      de: "(ICF: b280)",
+      en: "(ICF: b280)",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: '… durch die Schuhe verbessert',
-          en: '... improved because of the shoes'
+          de: "… durch die Schuhe verbessert",
+          en: "... improved because of the shoes",
         },
-        value: 'improved_by_shoes'
+        value: "improved_by_shoes",
       },
       {
         label: {
-          de: '… verbessert, aber nicht wegen der Schuhe',
-          en: '... improved, but not because of the shoes'
+          de: "… verbessert, aber nicht wegen der Schuhe",
+          en: "... improved, but not because of the shoes",
         },
-        value: 'improved_other'
+        value: "improved_other",
       },
       {
         label: {
-          de: '… nicht verändert',
-          en: '... not changed'
+          de: "… nicht verändert",
+          en: "... not changed",
         },
-        value: 'unchanged'
+        value: "unchanged",
       },
       {
         label: {
-          de: '… verschlechtert, aber nicht wegen der Schuhe',
-          en: '... worsened, but not because of the shoes'
+          de: "… verschlechtert, aber nicht wegen der Schuhe",
+          en: "... worsened, but not because of the shoes",
         },
-        value: 'worsened_other'
+        value: "worsened_other",
       },
       {
         label: {
-          de: '… durch die Schuhe verschlechtert',
-          en: '... worsened because of the shoes'
+          de: "… durch die Schuhe verschlechtert",
+          en: "... worsened because of the shoes",
         },
-        value: 'worsened_by_shoes'
-      }
-    ]
+        value: "worsened_by_shoes",
+      },
+    ],
   },
 
   // C. Orthopedic Shoes
   {
-    id: 'post_shoe_duration',
+    id: "post_shoe_duration",
     section: {
-      de: 'C. Orthopädische Schuhe',
-      en: 'C. Orthopedic Shoes'
+      de: "C. Orthopädische Schuhe",
+      en: "C. Orthopedic Shoes",
     },
     question: {
-      de: 'Seit wann tragen Sie orthopädische Schuhe?',
-      en: 'How long have you been wearing orthopedic shoes?'
+      de: "Seit wann tragen Sie orthopädische Schuhe?",
+      en: "How long have you been wearing orthopedic shoes?",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: 'Weniger als 1 Monat',
-          en: 'Less than 1 month'
+          de: "Weniger als 1 Monat",
+          en: "Less than 1 month",
         },
-        value: 'less_1_month'
+        value: "less_1_month",
       },
       {
         label: {
-          de: '1-3 Monate',
-          en: '1-3 months'
+          de: "1-3 Monate",
+          en: "1-3 months",
         },
-        value: '1_3_months'
+        value: "1_3_months",
       },
       {
         label: {
-          de: '3-6 Monate',
-          en: '3-6 months'
+          de: "3-6 Monate",
+          en: "3-6 months",
         },
-        value: '3_6_months'
+        value: "3_6_months",
       },
       {
         label: {
-          de: '6-12 Monate',
-          en: '6-12 months'
+          de: "6-12 Monate",
+          en: "6-12 months",
         },
-        value: '6_12_months'
+        value: "6_12_months",
       },
       {
         label: {
-          de: 'Mehr als 1 Jahr',
-          en: 'More than 1 year'
+          de: "Mehr als 1 Jahr",
+          en: "More than 1 year",
         },
-        value: 'more_1_year'
-      }
-    ]
+        value: "more_1_year",
+      },
+    ],
   },
   {
-    id: 'post_shoe_fit',
+    id: "post_shoe_fit",
     section: {
-      de: 'C. Orthopädische Schuhe',
-      en: 'C. Orthopedic Shoes'
+      de: "C. Orthopädische Schuhe",
+      en: "C. Orthopedic Shoes",
     },
     question: {
-      de: 'Wie gut passen Ihre orthopädischen Schuhe?',
-      en: 'How well do your orthopedic shoes fit?'
+      de: "Wie gut passen Ihre orthopädischen Schuhe?",
+      en: "How well do your orthopedic shoes fit?",
     },
-    type: 'scale',
+    type: "scale",
     required: true,
     scaleStart: {
-      de: 'Überhaupt nicht',
-      en: 'Not at all'
+      de: "Überhaupt nicht",
+      en: "Not at all",
     },
     scaleEnd: {
-      de: 'Sehr gut',
-      en: 'Very well'
+      de: "Sehr gut",
+      en: "Very well",
     },
     scaleLabels: {
-      de: ['Überhaupt nicht', 'Schlecht', 'Mittelmäßig', 'Gut', 'Sehr gut'],
-      en: ['Not at all', 'Poor', 'Fair', 'Good', 'Very well']
-    }
+      de: ["Überhaupt nicht", "Schlecht", "Mittelmäßig", "Gut", "Sehr gut"],
+      en: ["Not at all", "Poor", "Fair", "Good", "Very well"],
+    },
   },
   {
-    id: 'post_shoe_comfort',
+    id: "post_shoe_comfort",
     section: {
-      de: 'C. Orthopädische Schuhe',
-      en: 'C. Orthopedic Shoes'
+      de: "C. Orthopädische Schuhe",
+      en: "C. Orthopedic Shoes",
     },
     question: {
-      de: 'Wie bequem sind Ihre orthopädischen Schuhe?',
-      en: 'How comfortable are your orthopedic shoes?'
+      de: "Wie bequem sind Ihre orthopädischen Schuhe?",
+      en: "How comfortable are your orthopedic shoes?",
     },
-    type: 'scale',
+    type: "scale",
     required: true,
     scaleStart: {
-      de: 'Überhaupt nicht',
-      en: 'Not at all'
+      de: "Überhaupt nicht",
+      en: "Not at all",
     },
     scaleEnd: {
-      de: 'Sehr bequem',
-      en: 'Very comfortable'
+      de: "Sehr bequem",
+      en: "Very comfortable",
     },
     scaleLabels: {
-      de: ['Überhaupt nicht', 'Unbequem', 'Mittelmäßig', 'Bequem', 'Sehr bequem'],
-      en: ['Not at all', 'Uncomfortable', 'Fair', 'Comfortable', 'Very comfortable']
-    }
+      de: [
+        "Überhaupt nicht",
+        "Unbequem",
+        "Mittelmäßig",
+        "Bequem",
+        "Sehr bequem",
+      ],
+      en: [
+        "Not at all",
+        "Uncomfortable",
+        "Fair",
+        "Comfortable",
+        "Very comfortable",
+      ],
+    },
   },
   {
-    id: 'post_shoe_stability',
+    id: "post_shoe_stability",
     section: {
-      de: 'C. Orthopädische Schuhe',
-      en: 'C. Orthopedic Shoes'
+      de: "C. Orthopädische Schuhe",
+      en: "C. Orthopedic Shoes",
     },
     question: {
-      de: 'Wie stabil fühlen Sie sich in Ihren orthopädischen Schuhen?',
-      en: 'How stable do you feel in your orthopedic shoes?'
+      de: "Wie stabil fühlen Sie sich in Ihren orthopädischen Schuhen?",
+      en: "How stable do you feel in your orthopedic shoes?",
     },
-    type: 'scale',
+    type: "scale",
     required: true,
     scaleStart: {
-      de: 'Sehr instabil',
-      en: 'Very unstable'
+      de: "Sehr instabil",
+      en: "Very unstable",
     },
     scaleEnd: {
-      de: 'Sehr stabil',
-      en: 'Very stable'
+      de: "Sehr stabil",
+      en: "Very stable",
     },
     scaleLabels: {
-      de: ['Sehr instabil', 'Instabil', 'Neutral', 'Stabil', 'Sehr stabil'],
-      en: ['Very unstable', 'Unstable', 'Neutral', 'Stable', 'Very stable']
-    }
+      de: ["Sehr instabil", "Instabil", "Neutral", "Stabil", "Sehr stabil"],
+      en: ["Very unstable", "Unstable", "Neutral", "Stable", "Very stable"],
+    },
   },
   {
-    id: 'post_shoe_usage',
+    id: "post_shoe_usage",
     section: {
-      de: 'C. Orthopädische Schuhe',
-      en: 'C. Orthopedic Shoes'
+      de: "C. Orthopädische Schuhe",
+      en: "C. Orthopedic Shoes",
     },
     question: {
-      de: 'Wie oft tragen Sie Ihre orthopädischen Schuhe?',
-      en: 'How often do you wear your orthopedic shoes?'
+      de: "Wie oft tragen Sie Ihre orthopädischen Schuhe?",
+      en: "How often do you wear your orthopedic shoes?",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: 'Täglich',
-          en: 'Daily'
+          de: "Täglich",
+          en: "Daily",
         },
-        value: 'daily'
+        value: "daily",
       },
       {
         label: {
-          de: 'Mehrmals pro Woche',
-          en: 'Several times a week'
+          de: "Mehrmals pro Woche",
+          en: "Several times a week",
         },
-        value: 'several_times_week'
+        value: "several_times_week",
       },
       {
         label: {
-          de: 'Einmal pro Woche',
-          en: 'Once a week'
+          de: "Einmal pro Woche",
+          en: "Once a week",
         },
-        value: 'once_week'
+        value: "once_week",
       },
       {
         label: {
-          de: 'Seltener',
-          en: 'Less often'
+          de: "Seltener",
+          en: "Less often",
         },
-        value: 'less_often'
+        value: "less_often",
       },
       {
         label: {
-          de: 'Gar nicht',
-          en: 'Not at all'
+          de: "Gar nicht",
+          en: "Not at all",
         },
-        value: 'not_at_all'
-      }
-    ]
+        value: "not_at_all",
+      },
+    ],
   },
   {
-    id: 'post_shoe_problems',
+    id: "post_shoe_problems",
     section: {
-      de: 'C. Orthopädische Schuhe',
-      en: 'C. Orthopedic Shoes'
+      de: "C. Orthopädische Schuhe",
+      en: "C. Orthopedic Shoes",
     },
     question: {
-      de: 'Haben Sie Probleme mit Ihren orthopädischen Schuhen?',
-      en: 'Do you have any problems with your orthopedic shoes?'
+      de: "Haben Sie Probleme mit Ihren orthopädischen Schuhen?",
+      en: "Do you have any problems with your orthopedic shoes?",
     },
-    type: 'checkbox',
+    type: "checkbox",
     required: true,
     options: [
       {
         label: {
-          de: 'Keine Probleme',
-          en: 'No problems'
+          de: "Keine Probleme",
+          en: "No problems",
         },
-        value: 'none'
+        value: "none",
       },
       {
         label: {
-          de: 'Druckstellen',
-          en: 'Pressure points'
+          de: "Druckstellen",
+          en: "Pressure points",
         },
-        value: 'pressure'
+        value: "pressure",
       },
       {
         label: {
-          de: 'Schmerzen',
-          en: 'Pain'
+          de: "Schmerzen",
+          en: "Pain",
         },
-        value: 'pain'
+        value: "pain",
       },
       {
         label: {
-          de: 'Schlechte Passform',
-          en: 'Poor fit'
+          de: "Schlechte Passform",
+          en: "Poor fit",
         },
-        value: 'poor_fit'
+        value: "poor_fit",
       },
       {
         label: {
-          de: 'Instabilität',
-          en: 'Instability'
+          de: "Instabilität",
+          en: "Instability",
         },
-        value: 'instability'
+        value: "instability",
       },
       {
         label: {
-          de: 'Schwer anzuziehen',
-          en: 'Difficult to put on'
+          de: "Schwer anzuziehen",
+          en: "Difficult to put on",
         },
-        value: 'difficult_to_wear'
+        value: "difficult_to_wear",
       },
       {
         label: {
-          de: 'Unattraktives Aussehen',
-          en: 'Unattractive appearance'
+          de: "Unattraktives Aussehen",
+          en: "Unattractive appearance",
         },
-        value: 'unattractive'
+        value: "unattractive",
       },
       {
         label: {
-          de: 'Sonstiges',
-          en: 'Other'
+          de: "Sonstiges",
+          en: "Other",
         },
-        value: 'other'
-      }
-    ]
+        value: "other",
+      },
+    ],
   },
   {
-    id: 'post_shoe_problems_other',
+    id: "post_shoe_problems_other",
     section: {
-      de: 'C. Orthopädische Schuhe',
-      en: 'C. Orthopedic Shoes'
+      de: "C. Orthopädische Schuhe",
+      en: "C. Orthopedic Shoes",
     },
     question: {
-      de: 'Bitte beschreiben Sie Ihre sonstigen Probleme mit den orthopädischen Schuhen:',
-      en: 'Please describe your other problems with the orthopedic shoes:'
+      de: "Bitte beschreiben Sie Ihre sonstigen Probleme mit den orthopädischen Schuhen:",
+      en: "Please describe your other problems with the orthopedic shoes:",
     },
-    type: 'text',
+    type: "text",
     required: false,
     conditionalDisplay: {
-      questionId: 'post_shoe_problems',
-      value: 'other'
-    }
+      questionId: "post_shoe_problems",
+      value: "other",
+    },
   },
 
   // D. Satisfaction and Effectiveness
   {
-    id: 'post_satisfaction_overall',
+    id: "post_satisfaction_overall",
     section: {
-      de: 'D. Zufriedenheit und Wirksamkeit',
-      en: 'D. Satisfaction and Effectiveness'
+      de: "D. Zufriedenheit und Wirksamkeit",
+      en: "D. Satisfaction and Effectiveness",
     },
     question: {
-      de: 'Wie zufrieden sind Sie insgesamt mit Ihren orthopädischen Schuhen?',
-      en: 'How satisfied are you overall with your orthopedic shoes?'
+      de: "Wie zufrieden sind Sie insgesamt mit Ihren orthopädischen Schuhen?",
+      en: "How satisfied are you overall with your orthopedic shoes?",
     },
-    type: 'scale',
+    type: "scale",
     required: true,
     scaleStart: {
-      de: 'Sehr unzufrieden',
-      en: 'Very dissatisfied'
+      de: "Sehr unzufrieden",
+      en: "Very dissatisfied",
     },
     scaleEnd: {
-      de: 'Sehr zufrieden',
-      en: 'Very satisfied'
+      de: "Sehr zufrieden",
+      en: "Very satisfied",
     },
     scaleLabels: {
-      de: ['Sehr unzufrieden', 'Unzufrieden', 'Neutral', 'Zufrieden', 'Sehr zufrieden'],
-      en: ['Very dissatisfied', 'Dissatisfied', 'Neutral', 'Satisfied', 'Very satisfied']
-    }
+      de: [
+        "Sehr unzufrieden",
+        "Unzufrieden",
+        "Neutral",
+        "Zufrieden",
+        "Sehr zufrieden",
+      ],
+      en: [
+        "Very dissatisfied",
+        "Dissatisfied",
+        "Neutral",
+        "Satisfied",
+        "Very satisfied",
+      ],
+    },
   },
   {
-    id: 'post_expectations_met',
+    id: "post_expectations_met",
     section: {
-      de: 'D. Zufriedenheit und Wirksamkeit',
-      en: 'D. Satisfaction and Effectiveness'
+      de: "D. Zufriedenheit und Wirksamkeit",
+      en: "D. Satisfaction and Effectiveness",
     },
     question: {
-      de: 'Inwieweit haben die orthopädischen Schuhe Ihre Erwartungen erfüllt?',
-      en: 'To what extent have the orthopedic shoes met your expectations?'
+      de: "Inwieweit haben die orthopädischen Schuhe Ihre Erwartungen erfüllt?",
+      en: "To what extent have the orthopedic shoes met your expectations?",
     },
-    type: 'scale',
+    type: "scale",
     required: true,
     scaleStart: {
-      de: 'Überhaupt nicht',
-      en: 'Not at all'
+      de: "Überhaupt nicht",
+      en: "Not at all",
     },
     scaleEnd: {
-      de: 'Vollständig',
-      en: 'Completely'
+      de: "Vollständig",
+      en: "Completely",
     },
     scaleLabels: {
-      de: ['Überhaupt nicht', 'Wenig', 'Teilweise', 'Größtenteils', 'Vollständig'],
-      en: ['Not at all', 'A little', 'Partially', 'Mostly', 'Completely']
-    }
+      de: [
+        "Überhaupt nicht",
+        "Wenig",
+        "Teilweise",
+        "Größtenteils",
+        "Vollständig",
+      ],
+      en: ["Not at all", "A little", "Partially", "Mostly", "Completely"],
+    },
   },
   {
-    id: 'post_recommend',
+    id: "post_recommend",
     section: {
-      de: 'D. Zufriedenheit und Wirksamkeit',
-      en: 'D. Satisfaction and Effectiveness'
+      de: "D. Zufriedenheit und Wirksamkeit",
+      en: "D. Satisfaction and Effectiveness",
     },
     question: {
-      de: 'Würden Sie orthopädische Schuhe anderen Personen mit ähnlichen Problemen empfehlen?',
-      en: 'Would you recommend orthopedic shoes to other people with similar problems?'
+      de: "Würden Sie orthopädische Schuhe anderen Personen mit ähnlichen Problemen empfehlen?",
+      en: "Would you recommend orthopedic shoes to other people with similar problems?",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: 'Definitiv ja',
-          en: 'Definitely yes'
+          de: "Definitiv ja",
+          en: "Definitely yes",
         },
-        value: 'definitely_yes'
+        value: "definitely_yes",
       },
       {
         label: {
-          de: 'Wahrscheinlich ja',
-          en: 'Probably yes'
+          de: "Wahrscheinlich ja",
+          en: "Probably yes",
         },
-        value: 'probably_yes'
+        value: "probably_yes",
       },
       {
         label: {
-          de: 'Unentschieden',
-          en: 'Undecided'
+          de: "Unentschieden",
+          en: "Undecided",
         },
-        value: 'undecided'
+        value: "undecided",
       },
       {
         label: {
-          de: 'Wahrscheinlich nein',
-          en: 'Probably no'
+          de: "Wahrscheinlich nein",
+          en: "Probably no",
         },
-        value: 'probably_no'
+        value: "probably_no",
       },
       {
         label: {
-          de: 'Definitiv nein',
-          en: 'Definitely no'
+          de: "Definitiv nein",
+          en: "Definitely no",
         },
-        value: 'definitely_no'
-      }
-    ]
+        value: "definitely_no",
+      },
+    ],
   },
 
   // E. Quality of Life
   {
-    id: 'post_qol_mobility',
+    id: "post_qol_mobility",
     section: {
-      de: 'E. Lebensqualität',
-      en: 'E. Quality of Life'
+      de: "E. Lebensqualität",
+      en: "E. Quality of Life",
     },
     question: {
-      de: 'Wie zufrieden sind Sie mit Ihrer aktuellen Mobilität?',
-      en: 'How satisfied are you with your current mobility?'
+      de: "Wie zufrieden sind Sie mit Ihrer aktuellen Mobilität?",
+      en: "How satisfied are you with your current mobility?",
     },
     description: {
-      de: '(ICF: d4 Mobilität)',
-      en: '(ICF: d4 Mobility)'
+      de: "(ICF: d4 Mobilität)",
+      en: "(ICF: d4 Mobility)",
     },
-    type: 'scale',
+    type: "scale",
     required: true,
     scaleStart: {
-      de: 'Sehr unzufrieden',
-      en: 'Very dissatisfied'
+      de: "Sehr unzufrieden",
+      en: "Very dissatisfied",
     },
     scaleEnd: {
-      de: 'Sehr zufrieden',
-      en: 'Very satisfied'
+      de: "Sehr zufrieden",
+      en: "Very satisfied",
     },
     scaleLabels: {
-      de: ['Sehr unzufrieden', 'Unzufrieden', 'Neutral', 'Zufrieden', 'Sehr zufrieden'],
-      en: ['Very dissatisfied', 'Dissatisfied', 'Neutral', 'Satisfied', 'Very satisfied']
-    }
+      de: [
+        "Sehr unzufrieden",
+        "Unzufrieden",
+        "Neutral",
+        "Zufrieden",
+        "Sehr zufrieden",
+      ],
+      en: [
+        "Very dissatisfied",
+        "Dissatisfied",
+        "Neutral",
+        "Satisfied",
+        "Very satisfied",
+      ],
+    },
   },
   {
-    id: 'post_qol_participation',
+    id: "post_qol_participation",
     section: {
-      de: 'E. Lebensqualität',
-      en: 'E. Quality of Life'
+      de: "E. Lebensqualität",
+      en: "E. Quality of Life",
     },
     question: {
-      de: 'Wie sehr schränken Ihre Fußprobleme Ihre Teilnahme am gesellschaftlichen Leben ein?',
-      en: 'How much do your foot problems limit your participation in social life?'
+      de: "Wie sehr schränken Ihre Fußprobleme Ihre Teilnahme am gesellschaftlichen Leben ein?",
+      en: "How much do your foot problems limit your participation in social life?",
     },
     description: {
-      de: '(ICF: d9 Gemeinschafts-, soziales und staatsbürgerliches Leben)',
-      en: '(ICF: d9 Community, social and civic life)'
+      de: "(ICF: d9 Gemeinschafts-, soziales und staatsbürgerliches Leben)",
+      en: "(ICF: d9 Community, social and civic life)",
     },
-    type: 'scale',
+    type: "scale",
     required: true,
     scaleStart: {
-      de: 'Überhaupt nicht',
-      en: 'Not at all'
+      de: "Überhaupt nicht",
+      en: "Not at all",
     },
     scaleEnd: {
-      de: 'Sehr stark',
-      en: 'Very much'
+      de: "Sehr stark",
+      en: "Very much",
     },
     scaleLabels: {
-      de: ['Überhaupt nicht', 'Wenig', 'Mäßig', 'Stark', 'Sehr stark'],
-      en: ['Not at all', 'A little', 'Moderately', 'Much', 'Very much']
-    }
+      de: ["Überhaupt nicht", "Wenig", "Mäßig", "Stark", "Sehr stark"],
+      en: ["Not at all", "A little", "Moderately", "Much", "Very much"],
+    },
   },
   {
-    id: 'post_qol_improvement',
+    id: "post_qol_improvement",
     section: {
-      de: 'E. Lebensqualität',
-      en: 'E. Quality of Life'
+      de: "E. Lebensqualität",
+      en: "E. Quality of Life",
     },
     question: {
-      de: 'Im Vergleich zur Zeit vor Erhalt Ihrer orthopädischen Schuhe, hat sich Ihre Lebensqualität…',
-      en: 'Compared to before receiving your orthopedic shoes, has your quality of life...'
+      de: "Im Vergleich zur Zeit vor Erhalt Ihrer orthopädischen Schuhe, hat sich Ihre Lebensqualität…",
+      en: "Compared to before receiving your orthopedic shoes, has your quality of life...",
     },
-    type: 'radio',
+    type: "radio",
     required: true,
     options: [
       {
         label: {
-          de: '… durch die Schuhe verbessert',
-          en: '... improved because of the shoes'
+          de: "… durch die Schuhe verbessert",
+          en: "... improved because of the shoes",
         },
-        value: 'improved_by_shoes'
+        value: "improved_by_shoes",
       },
       {
         label: {
-          de: '… verbessert, aber nicht wegen der Schuhe',
-          en: '... improved, but not because of the shoes'
+          de: "… verbessert, aber nicht wegen der Schuhe",
+          en: "... improved, but not because of the shoes",
         },
-        value: 'improved_other'
+        value: "improved_other",
       },
       {
         label: {
-          de: '… nicht verändert',
-          en: '... not changed'
+          de: "… nicht verändert",
+          en: "... not changed",
         },
-        value: 'unchanged'
+        value: "unchanged",
       },
       {
         label: {
-          de: '… verschlechtert, aber nicht wegen der Schuhe',
-          en: '... worsened, but not because of the shoes'
+          de: "… verschlechtert, aber nicht wegen der Schuhe",
+          en: "... worsened, but not because of the shoes",
         },
-        value: 'worsened_other'
+        value: "worsened_other",
       },
       {
         label: {
-          de: '… durch die Schuhe verschlechtert',
-          en: '... worsened because of the shoes'
+          de: "… durch die Schuhe verschlechtert",
+          en: "... worsened because of the shoes",
         },
-        value: 'worsened_by_shoes'
-      }
-    ]
+        value: "worsened_by_shoes",
+      },
+    ],
   },
 
   // F. Additional Information
   {
-    id: 'post_additional_info',
+    id: "post_additional_info",
     section: {
-      de: 'F. Zusätzliche Informationen',
-      en: 'F. Additional Information'
+      de: "F. Zusätzliche Informationen",
+      en: "F. Additional Information",
     },
     question: {
-      de: 'Gibt es weitere Informationen zu Ihren Erfahrungen mit den orthopädischen Schuhen, die Sie mitteilen möchten?',
-      en: 'Is there any additional information about your experience with orthopedic shoes that you would like to share?'
+      de: "Gibt es weitere Informationen zu Ihren Erfahrungen mit den orthopädischen Schuhen, die Sie mitteilen möchten?",
+      en: "Is there any additional information about your experience with orthopedic shoes that you would like to share?",
     },
-    type: 'text',
+    type: "text",
     required: false,
     description: {
-      de: 'Bitte beschreiben Sie alle weiteren relevanten Aspekte.',
-      en: 'Please describe any other relevant aspects.'
-    }
-  }
+      de: "Bitte beschreiben Sie alle weiteren relevanten Aspekte.",
+      en: "Please describe any other relevant aspects.",
+    },
+  },
 ];
