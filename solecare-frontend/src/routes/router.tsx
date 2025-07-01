@@ -29,19 +29,6 @@ export const router = createBrowserRouter([
         path: "/register",
         element: <RegisterPage />,
       },
-      // Questionnaire routes
-      {
-        path: "/questionnaire",
-        element: <Welcome />,
-      },
-      {
-        path: "/questionnaire/:part",
-        element: <Questionnaire />,
-      },
-      {
-        path: "/thank-you",
-        element: <ThankYou />,
-      },
       {
         path: "/patient",
         children: [
@@ -56,6 +43,18 @@ export const router = createBrowserRouter([
           {
             path: "shoemaker",
             element: <AssignShoemakerPage />,
+          },
+          {
+            path: "mos",
+            element: <Welcome />,
+          },
+          {
+            path: "mos/:part",
+            element: <Questionnaire />,
+          },
+          {
+            path: "mos/thank-you",
+            element: <ThankYou />,
           },
         ],
       },

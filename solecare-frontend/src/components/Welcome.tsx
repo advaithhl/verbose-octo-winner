@@ -94,7 +94,7 @@ const Welcome: React.FC = () => {
                 </h2>
                 <p>{translations.part1.description[language]}</p>
                 <Link
-                  to="/questionnaire/pre"
+                  to="/patient/mos/pre"
                   className={`mt-6 block w-full text-center py-4 px-6 rounded-lg ${highContrast ? "bg-white text-black hover:bg-gray-200" : "bg-blue-700 text-white hover:bg-blue-800"} transition-colors font-bold`}
                 >
                   {translations.part1.button[language]}
@@ -111,7 +111,7 @@ const Welcome: React.FC = () => {
                 </h2>
                 <p>{translations.part2.description[language]}</p>
                 <Link
-                  to="/questionnaire/post"
+                  to="/patient/mos/post"
                   className={`mt-6 block w-full text-center py-4 px-6 rounded-lg ${highContrast ? "bg-white text-black hover:bg-gray-200" : "bg-blue-700 text-white hover:bg-blue-800"} transition-colors font-bold`}
                 >
                   {translations.part2.button[language]}
