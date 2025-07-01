@@ -4,6 +4,7 @@ import { RouterProvider } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { router } from "./routes/router";
 import { theme } from "./theme";
+import { AppProvider } from "./context/AppContext";
 
 function App() {
   const queryClient = new QueryClient();
@@ -11,7 +12,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider theme={theme}>
-        <RouterProvider router={router} />
+        <AppProvider>
+          <RouterProvider router={router} />
+        </AppProvider>
       </MantineProvider>
     </QueryClientProvider>
   );

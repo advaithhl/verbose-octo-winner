@@ -9,6 +9,9 @@ import DoctorDashboard from "../components/pages/doctor/dashboard";
 import PatientListPage from "../components/pages/doctor/patients";
 import PatientDetailPage from "../components/pages/doctor/patient-detail";
 import AssignShoemakerPage from "../components/pages/patient/shoemaker";
+import Welcome from "../components/Welcome";
+import Questionnaire from "../components/Questionnaire";
+import ThankYou from "../components/ThankYou";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +28,19 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterPage />,
+      },
+      // Questionnaire routes
+      {
+        path: "/questionnaire",
+        element: <Welcome />,
+      },
+      {
+        path: "/questionnaire/:part",
+        element: <Questionnaire />,
+      },
+      {
+        path: "/thank-you",
+        element: <ThankYou />,
       },
       {
         path: "/patient",
