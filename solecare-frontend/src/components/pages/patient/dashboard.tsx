@@ -107,7 +107,7 @@ export default function PatientDashboard() {
             Submit your initial assessment including walking ability,
             conditions, and expectations.
           </Text>
-          <Button mt="md" component="a" href="/patient/questionnaire1">
+          <Button mt="md" component="a" href="/questionnaire/pre">
             Fill Preliminary Questionnaire
           </Button>
         </Card>
@@ -117,18 +117,8 @@ export default function PatientDashboard() {
           <Text c="dimmed" size="sm" mt="xs">
             Track the effects of orthopedic shoes and your health progress.
           </Text>
-          <Button mt="md" component="a" href="/patient/questionnaire2">
+          <Button mt="md" component="a" href="/questionnaire/post">
             Fill Progress Questionnaire
-          </Button>
-        </Card>
-
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
-          <Title order={4}>View Submitted Questionnaires</Title>
-          <Text c="dimmed" size="sm" mt="xs">
-            Browse all your previously submitted questionnaires.
-          </Text>
-          <Button mt="md" component="a" href="/questionnaire/submitted">
-            View Questionnaires
           </Button>
         </Card>
       </SimpleGrid>
