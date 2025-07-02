@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router";
 import { HomeLayout } from "../components/layouts/home";
-import { HomePage } from "../components/pages/home";
 import LoginPage from "../components/pages/auth/login";
 import RegisterPage from "../components/pages/auth/register";
 import PatientDashboard from "../components/pages/patient/dashboard";
@@ -12,6 +11,9 @@ import AssignShoemakerPage from "../components/pages/patient/shoemaker";
 import Welcome from "../components/Welcome";
 import Questionnaire from "../components/Questionnaire";
 import ThankYou from "../components/ThankYou";
+import SettingsPage from "../components/pages/patient/settings-page";
+import PatientProfile from "../components/pages/patient/patient-profile-page";
+import Homepage from "../components/pages/home";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +21,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HomePage />,
+        element: <Homepage />,
       },
       {
         path: "/login",
@@ -72,6 +74,19 @@ export const router = createBrowserRouter([
           {
             path: "patients/:patientId",
             element: <PatientDetailPage />,
+          },
+        ],
+      },
+      {
+        path: "/user-profile",
+        children: [
+          {
+            path: "",
+            element: <PatientProfile />,
+          },
+          {
+            path: "settings",
+            element: <SettingsPage />,
           },
         ],
       },
