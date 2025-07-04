@@ -1,6 +1,7 @@
 from app.models.user import User
 from app.utils.jwt_utils import generate_token
 import bcrypt
+import uuid
 from mongoengine.errors import NotUniqueError
 
 class AuthService:
@@ -10,10 +11,15 @@ class AuthService:
         if data.password != data.confirmPassword:
             return False, "Passwords do not match"
 
+        # Encrypt user password
         hashed = bcrypt.hashpw(data.password.encode(), bcrypt.gensalt())
+
+        # Generate user id
+        user_id = str(uuid.uuid4())
 
         try:
             User(
+                user_id=user_id,
                 name=data.name,
                 email=data.email,
                 password=hashed.decode(),
@@ -35,7 +41,6 @@ class AuthService:
         token = generate_token(user.id, user.email, user.role)
 
         return {
-            "id": str(user.id),
             "name": user.name,
             "email": user.email,
             "role": user.role,

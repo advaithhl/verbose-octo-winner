@@ -1,7 +1,6 @@
 import { ROLES } from "../constants";
 
 export type User = {
-  id: string;
   name: string;
   email: string;
   token: string;

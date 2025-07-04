@@ -106,6 +106,7 @@ export default function RegisterPage() {
               label="Are you a patient, doctor, or a shoemaker?"
               placeholder="Pick value"
               data={Object.values(ROLES)}
+              {...form.getInputProps("role")}
               required
             />
           </Stack>
