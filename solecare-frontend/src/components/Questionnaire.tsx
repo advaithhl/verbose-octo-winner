@@ -244,7 +244,7 @@ const Questionnaire: React.FC = () => {
         // }
       }
       
-      navigate('/thank-you');
+      navigate("/patient/mos/thank-you");
     }
   };
 
