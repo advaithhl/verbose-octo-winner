@@ -16,6 +16,7 @@ import type { LoginInfo } from "../../../interfaces/auth";
 import type { User } from "../../../types/users";
 import { useMutation } from "@tanstack/react-query";
 import { ROLES } from "../../../constants";
+import { setUserInfoToLocalStorage } from "../../../util/userInfo";
 
 export default function LoginPage() {
   const form = useForm({
@@ -36,9 +37,7 @@ export default function LoginPage() {
   const loginMutation = useMutation({
     mutationFn: authService.login.bind(authService),
     onSuccess: (user: User) => {
-      // Not storing user info in local storage for now
-      // TODO: Uncomment the next line to enable local storage
-      // setUserInfoToLocalStorage(user);
+      setUserInfoToLocalStorage(user);
       switch (user.role) {
         case ROLES.PATIENT:
           navigate("/patient");

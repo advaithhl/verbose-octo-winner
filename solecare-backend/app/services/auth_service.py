@@ -38,7 +38,7 @@ class AuthService:
         if not bcrypt.checkpw(data.password.encode(), user.password.encode()):
             return None, "Unauthorized"
 
-        token = generate_token(user.id, user.email, user.role)
+        token = generate_token(user.user_id, user.email, user.role)
 
         return {
             "name": user.name,
