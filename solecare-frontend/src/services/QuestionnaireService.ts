@@ -11,10 +11,10 @@ class QuestionnaireService extends HTTPService {
   }
 
   // Submit questionnaire (works for both pre and post)
-  async submitQuestionnaire(submission: QuestionnaireSubmission): Promise<{ success: boolean; submissionId: string }> {
+  async submitQuestionnaire(submission: QuestionnaireSubmission): Promise<{ success: boolean; submissionId?: string; error?: string }> {
     try {
       const endpoint = submission.questionnaireType === 'pre' ? '/questionnaires/pre' : '/questionnaires/post';
-      const response = await this.post<{ success: boolean; submissionId: string }>(endpoint, submission);
+      const response = await this.post<{ success: boolean; submissionId?: string; error?: string }>(endpoint, submission);
       return response;
     } catch (error) {
       console.error('Error submitting questionnaire:', error);
