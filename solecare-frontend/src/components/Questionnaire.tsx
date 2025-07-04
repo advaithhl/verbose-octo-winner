@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router";
-import { useAppContext } from "../context/AppContext";
-import AccessibilityControls from "./AccessibilityControls";
-import { preQuestions } from "../data/preQuestions";
-import { postQuestions } from "../data/postQuestions";
-import {
-  FiHome,
-  FiVolume2,
-  FiX,
-  FiSave,
-  FiChevronLeft,
-  FiChevronRight,
-} from "react-icons/fi";
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router';
+import { useAppContext } from '../context/AppContext';
+import AccessibilityControls from './AccessibilityControls';
+import { preQuestions } from '../data/preQuestions';
+import { postQuestions } from '../data/postQuestions';
+import { convertFormDataToSubmission } from '../types/responses';
+import { FiHome, FiVolume2, FiX, FiSave, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const Questionnaire: React.FC = () => {
   const { part } = useParams<{ part: string }>();
@@ -221,16 +215,36 @@ const Questionnaire: React.FC = () => {
         );
 
         // Log completion time to console for research purposes
-        console.log(
-          `${part === "pre" ? "Pre-assessment" : "Post-assessment"} questionnaire completed in ${minutesTaken} minutes`,
+        console.log(`${part === 'pre' ? 'Pre-assessment' : 'Post-assessment'} questionnaire completed in ${minutesTaken} minutes`);
+        
+        // Convert form data to typed submission
+        const typedSubmission = convertFormDataToSubmission(
+          formData,
+          part as 'pre' | 'post',
+          'current-user-id', // Replace with actual user ID from auth context
+          startTime,
+          endTime,
+          language
         );
-        console.log("Questionnaire data:", formData);
-
+        
+        console.log('Typed questionnaire submission:', typedSubmission);
+        
         // Store completion time in form data for potential future use
         updateFormData(`${part}_completion_time`, minutesTaken.toString());
+        
+        // sample request to submit questionnaire
+        // try {
+        //   if (part === 'pre') {
+        //     await questionnaireService.submitPreQuestionnaire(typedSubmission as PreQuestionnaireSubmission);
+        //   } else {
+        //     await questionnaireService.submitPostQuestionnaire(typedSubmission as PostQuestionnaireSubmission);
+        //   }
+        // } catch (error) {
+        //   console.log('Error submitting questionnaire:', error);
+        // }
       }
-
-      navigate("/patient/mos/thank-you");
+      
+      navigate('/thank-you');
     }
   };
 
