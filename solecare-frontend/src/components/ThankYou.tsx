@@ -113,7 +113,7 @@ const ThankYou: React.FC = () => {
             </Link>
 
             <Link
-              to="/"
+              to="/patient/mos/"
               className={`py-4 px-8 rounded-lg text-center ${
                 highContrast
                   ? "bg-gray-800 text-white hover:bg-gray-700 border-2 border-white"
