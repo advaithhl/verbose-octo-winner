@@ -7,7 +7,6 @@ export interface QuestionnaireResponse {
 
 export interface QuestionnaireSubmission {
   submissionId: string;
-  userId: string;
   questionnaireType: 'pre' | 'post';
   startedAt: Date;
   completedAt: Date;
@@ -77,7 +76,6 @@ export function isPostQuestionnaire(submission: QuestionnaireSubmission): boolea
 export function convertFormDataToSubmission(
   formData: FormData,
   questionnaireType: 'pre' | 'post',
-  userId: string,
   startedAt: Date,
   completedAt: Date,
   language: 'de' | 'en'
@@ -93,7 +91,6 @@ export function convertFormDataToSubmission(
 
   return {
     submissionId: crypto.randomUUID(),
-    userId,
     questionnaireType,
     startedAt,
     completedAt,

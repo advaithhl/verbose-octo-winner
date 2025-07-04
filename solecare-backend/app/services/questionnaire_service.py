@@ -12,7 +12,6 @@ class QuestionnaireService:
         try:
             submission = QuestionnaireSubmission(
                 submission_id=submission_id,
-                user_id=data['userId'],
                 questionnaire_type=data['questionnaireType'],
                 started_at=datetime.fromisoformat(data['startedAt']),
                 completed_at=datetime.fromisoformat(data['completedAt']),

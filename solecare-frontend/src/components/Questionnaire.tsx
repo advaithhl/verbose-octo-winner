@@ -4,7 +4,10 @@ import { useAppContext } from "../context/AppContext";
 import AccessibilityControls from "./AccessibilityControls";
 import { preQuestions } from "../data/preQuestions";
 import { postQuestions } from "../data/postQuestions";
-import { convertFormDataToSubmission, type QuestionnaireSubmission } from "../types/responses";
+import {
+  convertFormDataToSubmission,
+  type QuestionnaireSubmission,
+} from "../types/responses";
 import {
   FiHome,
   FiVolume2,
@@ -189,29 +192,15 @@ const Questionnaire: React.FC = () => {
 
   const handleSubmit = async (startTime: Date) => {
     const endTime = new Date();
-    const minutesTaken = Math.round(
-      (endTime.getTime() - startTime.getTime()) / 60000,
-    );
-
-    // Log completion time to console for research purposes
-    console.log(
-      `${part === "pre" ? "Pre-assessment" : "Post-assessment"} questionnaire completed in ${minutesTaken} minutes`,
-    );
 
     // Convert form data to typed submission
     const typedSubmission = convertFormDataToSubmission(
       formData,
       part as "pre" | "post",
-      "current-user-id", // Replace with actual user ID from auth context
       startTime,
       endTime,
       language,
     );
-
-    console.log("Typed questionnaire submission:", typedSubmission);
-
-    // Store completion time in form data for potential future use
-    updateFormData(`${part}_completion_time`, minutesTaken.toString());
 
     // sample request to submit questionnaire
     try {
