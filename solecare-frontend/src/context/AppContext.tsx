@@ -1,15 +1,5 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-  useEffect,
-  useCallback,
-} from "react";
-
-type FormData = {
-  [key: string]: string | string[] | null;
-};
+import React, { createContext, useContext, useState, type ReactNode, useEffect, useCallback } from 'react';
+import type { FormData } from '../types/responses';
 
 interface AppContextType {
   formData: FormData;
