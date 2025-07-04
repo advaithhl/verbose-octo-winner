@@ -1,4 +1,6 @@
 from app.models.questionnaire import QuestionnaireResponse, QuestionnaireSubmission
+from app.models.user import User
+from app.utils.jwt_utils import decode_token
 from datetime import datetime
 from mongoengine.errors import ValidationError
 
@@ -8,11 +10,17 @@ class QuestionnaireService:
     @classmethod
     def create_questionnaire_submission(cls, data):
         submission_id = data['submissionId']
+        questionnaire_type = data['questionnaireType']
 
         try:
+            user_id = decode_token()
+            user = User.objects(user_id=user_id).first()
+            if not user:
+                return {"success": False, "error": "User not found"}, 404
+
             submission = QuestionnaireSubmission(
                 submission_id=submission_id,
-                questionnaire_type=data['questionnaireType'],
+                questionnaire_type=questionnaire_type,
                 started_at=datetime.fromisoformat(data['startedAt']),
                 completed_at=datetime.fromisoformat(data['completedAt']),
                 completion_time_minutes=data['completionTimeMinutes'],
@@ -20,6 +28,13 @@ class QuestionnaireService:
                 responses=cls._parse_questionnaire_responses(data['responses'])
             )
             submission.save()
+
+            if questionnaire_type == 'pre':
+                user.pre_mos = submission
+            elif questionnaire_type == 'post':
+                user.post_mos.append(submission)
+
+            user.save()
 
             return {"success": True, "submissionId": submission_id}, 201
 

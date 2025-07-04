@@ -1,4 +1,5 @@
 import jwt
+from flask import request
 from jwt import InvalidTokenError
 
 SECRET_KEY = "your_secret_key"  # Preferably from env
@@ -12,8 +13,10 @@ def generate_token(user_id, email, role):
     return jwt.encode(payload, SECRET_KEY, algorithm="HS256")
 
 
-def decode_token(headers):
-    auth_header = headers.get('Authorization', None)
+# Must be used in a Flask request context.
+# You should probably use the @login_required decorator instead.
+def decode_token():
+    auth_header = request.headers.get('Authorization', None)
 
     if not auth_header or not auth_header.startswith('Bearer '):
         raise ValueError("Missing or invalid Authorization header")
